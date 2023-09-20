@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Редактирование бота
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/bootstrap-icons/font/bootstrap-icons.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet"/>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+<div class="min-height-300 bg-primary position-absolute w-100"></div>
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
+       id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+           aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand text-center m-0"
+           href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+            <span class="ms-1 font-weight-bold">Чат-бот Админ-панель</span>
+        </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse h-auto  w-auto " id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Меню</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="../pages/creating.html">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <img src="/assets/img/bot-icon.svg" style="height: 30px" alt="">
+                    </div>
+                    <span class="nav-link-text ms-1">Чат-боты</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../pages/administrator.html">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <img src="/assets/img/admin-icon.svg" style="height: 20px" alt="">
+                    </div>
+                    <span class="nav-link-text ms-1">Администрирование</span>
+                </a>
+            </li>
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Документация</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../pages/profile.html">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Основная документация</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
+         data-scroll="false">
+        <div class="container-fluid d-flex justify-content-end py-1 px-3">
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                            <i class="bi bi-person-fill" style="font-size: 1rem"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center ms-3">
+                        <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                            <i class="bi bi-door-open-fill" style="font-size: 1rem"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line bg-white"></i>
+                                <i class="sidenav-toggler-line bg-white"></i>
+                                <i class="sidenav-toggler-line bg-white"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between pb-0">
+                        <div class="w-100">
+                            <div class="row">
+                                <a href="#">< Вернуться к списку ботов</a>
+                            </div>
+                            <div class="row ">
+                                <div class="col d-flex  justify-content-between align-items-center">
+                                    <h4 class="fw-bolder m-0">Чат-бот для Мэрии</h4>
+                                    <div>
+                                        <button class="btn btn-outline-primary m-0" data-bs-toggle="modal"
+                                                data-bs-target="#edit-data-modal">Настройка справочников
+                                        </button>
+                                        <button class="btn btn-outline-primary m-0" data-bs-toggle="modal"
+                                                data-bs-target="#accessControlBotModal">Управление доступом
+                                        </button>
+                                        <button class="btn btn-outline-primary m-0" data-bs-toggle="modal"
+                                                data-bs-target="#statsBotModal">Статистика
+                                        </button>
+                                        <button class="btn btn-primary m-0" data-bs-toggle="modal"
+                                                data-bs-target="#settingsBotModal">Настроить
+                                            бота
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="w-100">
+                            <div class="row p-4">
+                                <div class="col-12 editor-wrapper">
+                                    <div class="editor-block rounded-3"></div>
+                                </div>
+                            </div>
+                            <div class="row px-4">
+                                <div class="col d-flex flex-wrap child-me-1 justify-content-start align-items-center">
+                                    <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#settingsBotModal">Сохранить
+                                    </button>
+                                    <button class="btn btn-outline-primary " data-bs-toggle="modal"
+                                            data-bs-target="#integModal">Копировать код
+                                    </button>
+                                    <button class="btn btn-outline-primary">Экспортировать json
+                                    </button>
+                                    <input type="file" id="file-input" style="display: none;">
+                                    <button onclick="document.getElementById('file-input').click()"
+                                            class="btn btn-outline-primary">Импрортировать json
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Rename Modal -->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="renameModalLabel">Переименовать</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="rename_form" action="">
+                    <div>
+                        <label for="rename_name" class="form-label fw-normal modal-label">Введите новое название
+                            бота</label>
+                        <input type="text" class="form-control" id="rename_name" placeholder="Название"
+                               value="Чат-бот для мэрии">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-start">
+                <button type="submit" form="rename_form" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Integration Modal -->
+<div class="modal fade" id="integModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="integModalLabel">Вставить на сайт</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Вставьте данный код на сайт</p>
+                <pre><code class="language-html">&lt;div class="chatbot">&lt;/div>
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Удаление</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены что хотите удалить "Чат-бот для мэрии" навсегда?</p>
+            </div>
+            <div class="modal-footer">
+                <form action="#" id="deleteForm">
+                    <input type="text" hidden value="2" name="id">
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createBotModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content p-4">
+            <div class="modal-body">
+                <h3>Создание чат-бота</h3>
+                <form id="create_form" class="mt-3" action="">
+                    <div>
+                        <label for="rename_name" class="form-label fw-normal modal-label">Название</label>
+                        <input type="text" class="form-control" id="name_create"
+                               placeholder="Назовите своего нового бота">
+                        <button class="btn btn-primary mt-3 w-100">Продожить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistic Modal -->
+<div class="modal fade" id="statsBotModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content p-3 pb-0">
+            <div class="modal-body">
+                <h3>Статистика чат-бота</h3>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td>2011-04-25</td>
+                                <td>$320,800</td>
+                            </tr>
+                            <tr>
+                                <td>Garrett Winters</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>63</td>
+                                <td>2011-07-25</td>
+                                <td>$170,750</td>
+                            </tr>
+                            <tr>
+                                <td>Ashton Cox</td>
+                                <td>Junior Technical Author</td>
+                                <td>San Francisco</td>
+                                <td>66</td>
+                                <td>2009-01-12</td>
+                                <td>$86,000</td>
+                            </tr>
+                            <tr>
+                                <td>Cedric Kelly</td>
+                                <td>Senior Javascript Developer</td>
+                                <td>Edinburgh</td>
+                                <td>22</td>
+                                <td>2012-03-29</td>
+                                <td>$433,060</td>
+                            </tr>
+                            <tr>
+                                <td>Airi Satou</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>33</td>
+                                <td>2008-11-28</td>
+                                <td>$162,700</td>
+                            </tr>
+                            <tr>
+                                <td>Brielle Williamson</td>
+                                <td>Integration Specialist</td>
+                                <td>New York</td>
+                                <td>61</td>
+                                <td>2012-12-02</td>
+                                <td>$372,000</td>
+                            </tr>
+                            <tr>
+                                <td>Herrod Chandler</td>
+                                <td>Sales Assistant</td>
+                                <td>San Francisco</td>
+                                <td>59</td>
+                                <td>2012-08-06</td>
+                                <td>$137,500</td>
+                            </tr>
+                            <tr>
+                                <td>Rhona Davidson</td>
+                                <td>Integration Specialist</td>
+                                <td>Tokyo</td>
+                                <td>55</td>
+                                <td>2010-10-14</td>
+                                <td>$327,900</td>
+                            </tr>
+                            <tr>
+                                <td>Colleen Hurst</td>
+                                <td>Javascript Developer</td>
+                                <td>San Francisco</td>
+                                <td>39</td>
+                                <td>2009-09-15</td>
+                                <td>$205,500</td>
+                            </tr>
+                            <tr>
+                                <td>Sonya Frost</td>
+                                <td>Software Engineer</td>
+                                <td>Edinburgh</td>
+                                <td>23</td>
+                                <td>2008-12-13</td>
+                                <td>$103,600</td>
+                            </tr>
+                            <tr>
+                                <td>Jena Gaines</td>
+                                <td>Office Manager</td>
+                                <td>London</td>
+                                <td>30</td>
+                                <td>2008-12-19</td>
+                                <td>$90,560</td>
+                            </tr>
+                            <tr>
+                                <td>Quinn Flynn</td>
+                                <td>Support Lead</td>
+                                <td>Edinburgh</td>
+                                <td>22</td>
+                                <td>2013-03-03</td>
+                                <td>$342,000</td>
+                            </tr>
+                            <tr>
+                                <td>Charde Marshall</td>
+                                <td>Regional Director</td>
+                                <td>San Francisco</td>
+                                <td>36</td>
+                                <td>2008-10-16</td>
+                                <td>$470,600</td>
+                            </tr>
+                            <tr>
+                                <td>Haley Kennedy</td>
+                                <td>Senior Marketing Designer</td>
+                                <td>London</td>
+                                <td>43</td>
+                                <td>2012-12-18</td>
+                                <td>$313,500</td>
+                            </tr>
+                            <tr>
+                                <td>Tatyana Fitzpatrick</td>
+                                <td>Regional Director</td>
+                                <td>London</td>
+                                <td>19</td>
+                                <td>2010-03-17</td>
+                                <td>$385,750</td>
+                            </tr>
+                            <tr>
+                                <td>Michael Silva</td>
+                                <td>Marketing Designer</td>
+                                <td>London</td>
+                                <td>66</td>
+                                <td>2012-11-27</td>
+                                <td>$198,500</td>
+                            </tr>
+                            <tr>
+                                <td>Paul Byrd</td>
+                                <td>Chief Financial Officer (CFO)</td>
+                                <td>New York</td>
+                                <td>64</td>
+                                <td>2010-06-09</td>
+                                <td>$725,000</td>
+                            </tr>
+                            <tr>
+                                <td>Gloria Little</td>
+                                <td>Systems Administrator</td>
+                                <td>New York</td>
+                                <td>59</td>
+                                <td>2009-04-10</td>
+                                <td>$237,500</td>
+                            </tr>
+                            <tr>
+                                <td>Bradley Greer</td>
+                                <td>Software Engineer</td>
+                                <td>London</td>
+                                <td>41</td>
+                                <td>2012-10-13</td>
+                                <td>$132,000</td>
+                            </tr>
+                            <tr>
+                                <td>Dai Rios</td>
+                                <td>Personnel Lead</td>
+                                <td>Edinburgh</td>
+                                <td>35</td>
+                                <td>2012-09-26</td>
+                                <td>$217,500</td>
+                            </tr>
+                            <tr>
+                                <td>Jenette Caldwell</td>
+                                <td>Development Lead</td>
+                                <td>New York</td>
+                                <td>30</td>
+                                <td>2011-09-03</td>
+                                <td>$345,000</td>
+                            </tr>
+                            <tr>
+                                <td>Yuri Berry</td>
+                                <td>Chief Marketing Officer (CMO)</td>
+                                <td>New York</td>
+                                <td>40</td>
+                                <td>2009-06-25</td>
+                                <td>$675,000</td>
+                            </tr>
+                            <tr>
+                                <td>Caesar Vance</td>
+                                <td>Pre-Sales Support</td>
+                                <td>New York</td>
+                                <td>21</td>
+                                <td>2011-12-12</td>
+                                <td>$106,450</td>
+                            </tr>
+                            <tr>
+                                <td>Doris Wilder</td>
+                                <td>Sales Assistant</td>
+                                <td>Sydney</td>
+                                <td>23</td>
+                                <td>2010-09-20</td>
+                                <td>$85,600</td>
+                            </tr>
+                            <tr>
+                                <td>Angelica Ramos</td>
+                                <td>Chief Executive Officer (CEO)</td>
+                                <td>London</td>
+                                <td>47</td>
+                                <td>2009-10-09</td>
+                                <td>$1,200,000</td>
+                            </tr>
+                            <tr>
+                                <td>Gavin Joyce</td>
+                                <td>Developer</td>
+                                <td>Edinburgh</td>
+                                <td>42</td>
+                                <td>2010-12-22</td>
+                                <td>$92,575</td>
+                            </tr>
+                            <tr>
+                                <td>Jennifer Chang</td>
+                                <td>Regional Director</td>
+                                <td>Singapore</td>
+                                <td>28</td>
+                                <td>2010-11-14</td>
+                                <td>$357,650</td>
+                            </tr>
+                            <tr>
+                                <td>Brenden Wagner</td>
+                                <td>Software Engineer</td>
+                                <td>San Francisco</td>
+                                <td>28</td>
+                                <td>2011-06-07</td>
+                                <td>$206,850</td>
+                            </tr>
+                            <tr>
+                                <td>Fiona Green</td>
+                                <td>Chief Operating Officer (COO)</td>
+                                <td>San Francisco</td>
+                                <td>48</td>
+                                <td>2010-03-11</td>
+                                <td>$850,000</td>
+                            </tr>
+                            <tr>
+                                <td>Shou Itou</td>
+                                <td>Regional Marketing</td>
+                                <td>Tokyo</td>
+                                <td>20</td>
+                                <td>2011-08-14</td>
+                                <td>$163,000</td>
+                            </tr>
+                            <tr>
+                                <td>Michelle House</td>
+                                <td>Integration Specialist</td>
+                                <td>Sydney</td>
+                                <td>37</td>
+                                <td>2011-06-02</td>
+                                <td>$95,400</td>
+                            </tr>
+                            <tr>
+                                <td>Suki Burks</td>
+                                <td>Developer</td>
+                                <td>London</td>
+                                <td>53</td>
+                                <td>2009-10-22</td>
+                                <td>$114,500</td>
+                            </tr>
+                            <tr>
+                                <td>Prescott Bartlett</td>
+                                <td>Technical Author</td>
+                                <td>London</td>
+                                <td>27</td>
+                                <td>2011-05-07</td>
+                                <td>$145,000</td>
+                            </tr>
+                            <tr>
+                                <td>Gavin Cortez</td>
+                                <td>Team Leader</td>
+                                <td>San Francisco</td>
+                                <td>22</td>
+                                <td>2008-10-26</td>
+                                <td>$235,500</td>
+                            </tr>
+                            <tr>
+                                <td>Martena Mccray</td>
+                                <td>Post-Sales support</td>
+                                <td>Edinburgh</td>
+                                <td>46</td>
+                                <td>2011-03-09</td>
+                                <td>$324,050</td>
+                            </tr>
+                            <tr>
+                                <td>Unity Butler</td>
+                                <td>Marketing Designer</td>
+                                <td>San Francisco</td>
+                                <td>47</td>
+                                <td>2009-12-09</td>
+                                <td>$85,675</td>
+                            </tr>
+                            <tr>
+                                <td>Howard Hatfield</td>
+                                <td>Office Manager</td>
+                                <td>San Francisco</td>
+                                <td>51</td>
+                                <td>2008-12-16</td>
+                                <td>$164,500</td>
+                            </tr>
+                            <tr>
+                                <td>Hope Fuentes</td>
+                                <td>Secretary</td>
+                                <td>San Francisco</td>
+                                <td>41</td>
+                                <td>2010-02-12</td>
+                                <td>$109,850</td>
+                            </tr>
+                            <tr>
+                                <td>Vivian Harrell</td>
+                                <td>Financial Controller</td>
+                                <td>San Francisco</td>
+                                <td>62</td>
+                                <td>2009-02-14</td>
+                                <td>$452,500</td>
+                            </tr>
+                            <tr>
+                                <td>Timothy Mooney</td>
+                                <td>Office Manager</td>
+                                <td>London</td>
+                                <td>37</td>
+                                <td>2008-12-11</td>
+                                <td>$136,200</td>
+                            </tr>
+                            <tr>
+                                <td>Jackson Bradshaw</td>
+                                <td>Director</td>
+                                <td>New York</td>
+                                <td>65</td>
+                                <td>2008-09-26</td>
+                                <td>$645,750</td>
+                            </tr>
+                            <tr>
+                                <td>Olivia Liang</td>
+                                <td>Support Engineer</td>
+                                <td>Singapore</td>
+                                <td>64</td>
+                                <td>2011-02-03</td>
+                                <td>$234,500</td>
+                            </tr>
+                            <tr>
+                                <td>Bruno Nash</td>
+                                <td>Software Engineer</td>
+                                <td>London</td>
+                                <td>38</td>
+                                <td>2011-05-03</td>
+                                <td>$163,500</td>
+                            </tr>
+                            <tr>
+                                <td>Sakura Yamamoto</td>
+                                <td>Support Engineer</td>
+                                <td>Tokyo</td>
+                                <td>37</td>
+                                <td>2009-08-19</td>
+                                <td>$139,575</td>
+                            </tr>
+                            <tr>
+                                <td>Thor Walton</td>
+                                <td>Developer</td>
+                                <td>New York</td>
+                                <td>61</td>
+                                <td>2013-08-11</td>
+                                <td>$98,540</td>
+                            </tr>
+                            <tr>
+                                <td>Finn Camacho</td>
+                                <td>Support Engineer</td>
+                                <td>San Francisco</td>
+                                <td>47</td>
+                                <td>2009-07-07</td>
+                                <td>$87,500</td>
+                            </tr>
+                            <tr>
+                                <td>Serge Baldwin</td>
+                                <td>Data Coordinator</td>
+                                <td>Singapore</td>
+                                <td>64</td>
+                                <td>2012-04-09</td>
+                                <td>$138,575</td>
+                            </tr>
+                            <tr>
+                                <td>Zenaida Frank</td>
+                                <td>Software Engineer</td>
+                                <td>New York</td>
+                                <td>63</td>
+                                <td>2010-01-04</td>
+                                <td>$125,250</td>
+                            </tr>
+                            <tr>
+                                <td>Zorita Serrano</td>
+                                <td>Software Engineer</td>
+                                <td>San Francisco</td>
+                                <td>56</td>
+                                <td>2012-06-01</td>
+                                <td>$115,000</td>
+                            </tr>
+                            <tr>
+                                <td>Jennifer Acosta</td>
+                                <td>Junior Javascript Developer</td>
+                                <td>Edinburgh</td>
+                                <td>43</td>
+                                <td>2013-02-01</td>
+                                <td>$75,650</td>
+                            </tr>
+                            <tr>
+                                <td>Cara Stevens</td>
+                                <td>Sales Assistant</td>
+                                <td>New York</td>
+                                <td>46</td>
+                                <td>2011-12-06</td>
+                                <td>$145,600</td>
+                            </tr>
+                            <tr>
+                                <td>Hermione Butler</td>
+                                <td>Regional Director</td>
+                                <td>London</td>
+                                <td>47</td>
+                                <td>2011-03-21</td>
+                                <td>$356,250</td>
+                            </tr>
+                            <tr>
+                                <td>Lael Greer</td>
+                                <td>Systems Administrator</td>
+                                <td>London</td>
+                                <td>21</td>
+                                <td>2009-02-27</td>
+                                <td>$103,500</td>
+                            </tr>
+                            <tr>
+                                <td>Jonas Alexander</td>
+                                <td>Developer</td>
+                                <td>San Francisco</td>
+                                <td>30</td>
+                                <td>2010-07-14</td>
+                                <td>$86,500</td>
+                            </tr>
+                            <tr>
+                                <td>Shad Decker</td>
+                                <td>Regional Director</td>
+                                <td>Edinburgh</td>
+                                <td>51</td>
+                                <td>2008-11-13</td>
+                                <td>$183,000</td>
+                            </tr>
+                            <tr>
+                                <td>Michael Bruce</td>
+                                <td>Javascript Developer</td>
+                                <td>Singapore</td>
+                                <td>29</td>
+                                <td>2011-06-27</td>
+                                <td>$183,000</td>
+                            </tr>
+                            <tr>
+                                <td>Donna Snider</td>
+                                <td>Customer Support</td>
+                                <td>New York</td>
+                                <td>27</td>
+                                <td>2011-01-25</td>
+                                <td>$112,000</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bot Settings Modal -->
+<div class="modal fade" id="settingsBotModal" tabindex="-1" >
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content p-3 pb-0">
+            <div class="modal-body">
+                <h3>Настройка чат-бота</h3>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <form action="" id="form_edit_bot">
+                            <label for="rename_name" class="form-label fw-normal modal-label">Изображение бота</label>
+                            <div id="pick_bot_avatar" class="image-picker mb-3">
+                                <img src="http://via.placeholder.com/200x200" width="200" height="200"
+                                     class="rounded d-block mb-3" alt="...">
+                                <input type="file" class="form-control" id="image_inchat" name="image_inchat"
+                                       accept="image/jpeg,image/jpg,image/png">
+                            </div>
+
+                            <label for="rename_name" class="form-label fw-normal modal-label">Имя бота в чате</label>
+                            <input type="text" class="form-control" id="name_inchat" name="name_inchat"
+                                   placeholder="Придумайте имя чат-бота" value="Чат-бот">
+
+                            <h5 class="mt-5">Настройки внешнего вида</h5>
+                            <div class="row gy-4 d-flex flex-">
+                                <div class="col-4">
+                                    <label for="botBackInput" class="form-label">Цвет фона бота</label>
+                                    <input type="color" class="form-control form-control-color" id="botBackInput"
+                                           value="#F5F8FBFF" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="botTextInput" class="form-label">Цвет текста бота</label>
+                                    <input type="color" class="form-control form-control-color" id="botTextInput"
+                                           value="#ffffff" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="userBackInput" class="form-label">Цвет фона прользователя</label>
+                                    <input type="color" class="form-control form-control-color" id="userBackInput"
+                                           value="#563d7c" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="userTextInput" class="form-label">Цвет текста прользователя</label>
+                                    <input type="color" class="form-control form-control-color" id="userTextInput"
+                                           value="#563d7c" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="backColorInput" class="form-label">Цвет фона</label>
+                                    <input type="color" class="form-control form-control-color" id="backColorInput"
+                                           value="#563d7c" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="backHeaderInput" class="form-label">Цвет фона шапки</label>
+                                    <input type="color" class="form-control form-control-color" id="backHeaderInput"
+                                           value="#563d7c" title="Choose your color">
+                                </div>
+                                <div class="col-4">
+                                    <label for="textHeaderInput" class="form-label">Цвет текста шапки</label>
+                                    <input type="color" class="form-control form-control-color" id="textHeaderInput"
+                                           value="#563d7c" title="Choose your color">
+                                </div>
+                            </div>
+
+                            <input type="text" hidden value="2" name="id">
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <div class="rsc-container sc-iwsKbI chat-bot-container" width="350px" height="520px">
+                            <div class="rsc-header sc-gqjmRU chatBotHeader"><h2 id="name_bot_text"
+                                                                                class="rsc-header-title sc-VigVT chatBotHeaderText">
+                                Чат-бот</h2></div>
+                            <div class="rsc-content sc-gZMcBi fBGGBn" height="520px">
+                                <div class="rsc-ts rsc-ts-bot sc-dnqmqq efROPc">
+                                    <div class="rsc-ts-image-container sc-htoDjs vmYlS"><img
+                                            class="rsc-ts-image sc-gzVnrw cwuCQv"
+                                            src="data:image/svg+xml,%3csvg version='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath d='M303 70a47 47 0 1 0-70 40v84h46v-84c14-8 24-23 24-40z' fill='%2393c7ef'/%3e%3cpath d='M256 23v171h23v-84a47 47 0 0 0-23-87z' fill='%235a8bb0'/%3e%3cpath fill='%2393c7ef' d='M0 240h248v124H0z'/%3e%3cpath fill='%235a8bb0' d='M264 240h248v124H264z'/%3e%3cpath fill='%2393c7ef' d='M186 365h140v124H186z'/%3e%3cpath fill='%235a8bb0' d='M256 365h70v124h-70z'/%3e%3cpath fill='%23cce9f9' d='M47 163h419v279H47z'/%3e%3cpath fill='%2393c7ef' d='M256 163h209v279H256z'/%3e%3cpath d='M194 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%233c5d76'/%3e%3cpath d='M380 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%231e2e3b'/%3e%3cpath d='M186 349a70 70 0 1 0 140 0H186z' fill='%233c5d76'/%3e%3cpath d='M256 349v70c39 0 70-31 70-70h-70z' fill='%231e2e3b'/%3e%3c/svg%3e"
+                                            alt="avatar"></div>
+                                    <div class="rsc-ts-bubble sc-bZQynM message-bot-text">О чем вы сейчас думаете?</div>
+                                </div>
+                                <div class="rsc-os sc-EHOje jvzENE">
+                                    <ul class="rsc-os-options sc-ifAKCX gkhNlr">
+                                        <li class="rsc-os-option sc-htpNat GgOGn"><a
+                                                class="rsc-os-option-element sc-bxivhb chatBotButton">О небе</a></li>
+                                        <li class="rsc-os-option sc-htpNat GgOGn"><a
+                                                class="rsc-os-option-element sc-bxivhb chatBotButton">О смысле жизни</a>
+                                        </li>
+                                        <li class="rsc-os-option sc-htpNat GgOGn"><a
+                                                class="rsc-os-option-element sc-bxivhb chatBotButton">О поле</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rsc-ts rsc-ts-user sc-dnqmqq eBYsSN">
+                                    <div class="rsc-ts-image-container sc-htoDjs fmWSyf"><img
+                                            class="rsc-ts-image sc-gzVnrw eijbEu"
+                                            src="data:image/svg+xml,%3csvg viewBox='-208.5 21 100 100' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ccircle cx='-158.5' cy='71' fill='%23F5EEE5' r='50'/%3e%3cdefs%3e%3ccircle cx='-158.5' cy='71' id='a' r='50'/%3e%3c/defs%3e%3cclipPath id='b'%3e%3cuse overflow='visible' xlink:href='%23a'/%3e%3c/clipPath%3e%3cpath clip-path='url(%23b)' d='M-108.5 121v-14s-21.2-4.9-28-6.7c-2.5-.7-7-3.3-7-12V82h-30v6.3c0 8.7-4.5 11.3-7 12-6.8 1.9-28.1 7.3-28.1 6.7v14h100.1z' fill='%23E6C19C'/%3e%3cg clip-path='url(%23b)'%3e%3cdefs%3e%3cpath d='M-108.5 121v-14s-21.2-4.9-28-6.7c-2.5-.7-7-3.3-7-12V82h-30v6.3c0 8.7-4.5 11.3-7 12-6.8 1.9-28.1 7.3-28.1 6.7v14h100.1z' id='c'/%3e%3c/defs%3e%3cclipPath id='d'%3e%3cuse overflow='visible' xlink:href='%23c'/%3e%3c/clipPath%3e%3cpath clip-path='url(%23d)' d='M-158.5 100.1c12.7 0 23-18.6 23-34.4 0-16.2-10.3-24.7-23-24.7s-23 8.5-23 24.7c0 15.8 10.3 34.4 23 34.4z' fill='%23D4B08C'/%3e%3c/g%3e%3cpath d='M-158.5 96c12.7 0 23-16.3 23-31 0-15.1-10.3-23-23-23s-23 7.9-23 23c0 14.7 10.3 31 23 31z' fill='%23F2CEA5'/%3e%3c/svg%3e"
+                                            alt="avatar"></div>
+                                    <div class="rsc-ts-bubble sc-bZQynM message-user-text">О небе</div>
+                                </div>
+                                <div class="rsc-ts rsc-ts-bot sc-dnqmqq efROPc">
+                                    <div class="rsc-ts-image-container sc-htoDjs vmYlS"><img
+                                            class="rsc-ts-image sc-gzVnrw cwuCQv"
+                                            src="data:image/svg+xml,%3csvg version='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath d='M303 70a47 47 0 1 0-70 40v84h46v-84c14-8 24-23 24-40z' fill='%2393c7ef'/%3e%3cpath d='M256 23v171h23v-84a47 47 0 0 0-23-87z' fill='%235a8bb0'/%3e%3cpath fill='%2393c7ef' d='M0 240h248v124H0z'/%3e%3cpath fill='%235a8bb0' d='M264 240h248v124H264z'/%3e%3cpath fill='%2393c7ef' d='M186 365h140v124H186z'/%3e%3cpath fill='%235a8bb0' d='M256 365h70v124h-70z'/%3e%3cpath fill='%23cce9f9' d='M47 163h419v279H47z'/%3e%3cpath fill='%2393c7ef' d='M256 163h209v279H256z'/%3e%3cpath d='M194 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%233c5d76'/%3e%3cpath d='M380 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%231e2e3b'/%3e%3cpath d='M186 349a70 70 0 1 0 140 0H186z' fill='%233c5d76'/%3e%3cpath d='M256 349v70c39 0 70-31 70-70h-70z' fill='%231e2e3b'/%3e%3c/svg%3e"
+                                            alt="avatar"></div>
+                                    <div class="rsc-ts-bubble sc-bZQynM message-bot-text">Это прекрасно!</div>
+                                </div>
+                            </div>
+                            <div class="rsc-footer sc-cSHVUG hDUXUW"><input type="textarea"
+                                                                            class="rsc-input sc-kAzzGY iAuOXT"
+                                                                            placeholder="Введите сообщениe..."
+                                                                            disabled="" value="">
+                                <button class="rsc-submit-button sc-chPdSV iUYVrA" disabled="">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 500 500">
+                                        <g>
+                                            <g>
+                                                <polygon
+                                                        points="0,497.25 535.5,267.75 0,38.25 0,216.75 382.5,267.75 0,318.75"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" form="form_edit_bot">Сохранить</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Access Modal -->
+<div class="modal fade" id="accessControlBotModal" aria-hidden="true" tabindex="-1" >
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content p-3 pb-0">
+            <div class="modal-body">
+                <h3>Управление доступом</h3>
+                <div class="row mt-5">
+                    <h5>Выдача прав на бота другим пользователям</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Введите логин пользователя"
+                               aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <select class="form-select " id="inputGroupSelect03"
+                                aria-label="Example select with button addon">
+                            <option selected>Выберите права</option>
+                            <option value="1">Владелец</option>
+                            <option value="2">Оператор</option>
+                        </select>
+                        <button class="btn btn-primary m-0" type="button" id="button-add-user-to-bot">Добавить</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <h5>Пользователи с правами на бота</h5>
+                    <div class="col-12">
+                        <ul class="list-group list-group-flush users_access_list rounded-2">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <div><i class="bi bi-lightning-charge-fill text-warning"></i> Nikonych</div>
+                                <div>Создатель</div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div><i class="bi bi-person-fill text-primary"></i> Modyngway</div>
+                                <div>
+                                    <select class="form-select form-select-sm min-width-7" aria-label=".form-select-sm example">
+                                        <option value="1">Владелец</option>
+                                        <option value="2">Оператор</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div><i class="bi bi-person-fill text-primary"></i> Modyngway</div>
+                                <div>
+                                    <select class="form-select form-select-sm min-width-7" aria-label=".form-select-sm example">
+                                        <option value="1">Владелец</option>
+                                        <option value="2">Оператор</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div><i class="bi bi-person-fill text-primary"></i> Modyngway</div>
+                                <div>
+                                    <select class="form-select form-select-sm min-width-7" aria-label=".form-select-sm example">
+                                        <option value="1">Владелец</option>
+                                        <option value="2">Оператор</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-start align-items-center">
+                                <button class="btn btn-outline-secondary m-0" data-bs-target="#add-user-modal" data-bs-toggle="modal">
+                                    Создать нового пользователя
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" form="form_edit_bot">Сохранить</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AddUserModal -->
+<div class="modal fade" id="add-user-modal" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-user-title">Добавление пользователя</h5>
+                <button type="button" class="btn-close" data-bs-target="#accessControlBotModal" data-bs-toggle="modal"></button>
+            </div>
+            <div class="modal-body">
+
+                <form method="post">
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label for="username">Логин</label>
+                            <input type="text" class="form-control text-dark font-weight-bolder" id="username"
+                                   placeholder="Логин">
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="email">Эл. почта</label>
+                            <input type="email" class="form-control text-dark font-weight-bolder" id="email"
+                                   placeholder="Эл. почта">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label for="first_name">Имя</label>
+                            <input type="text" class="form-control text-dark font-weight-bolder" id="first_name"
+                                   placeholder="Имя">
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="last_name">Фамилия</label>
+                            <input type="text" class="form-control text-dark font-weight-bolder" id="last_name"
+                                   placeholder="Фамилия">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Пароль</label>
+                        <input type="password" class="form-control  text-dark font-weight-bolder" id="pass"
+                               placeholder="Пароль" >
+                    </div>
+                    <div class="form-group">
+                        <label for="access">Права</label>
+                        <select class="form-control text-dark font-weight-bolder" id="access">
+                            <option>Владелец</option>
+                            <option selected>Оператор</option>
+                        </select>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-target="#accessControlBotModal" data-bs-toggle="modal">Закрыть</button>
+                <button type="button" class="btn btn-slack" data-bs-target="#accessControlBotModal" data-bs-toggle="modal">Добавить пользователя</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of AddUserModal -->
+
+<!-- EditDataModal -->
+<div class="modal fade" id="edit-data-modal" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edit-data-modal-title">Настройка справочников</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Выберите нужные справочники для бота</h6>
+                <div class="col-12">
+                    <form id="form-change-data">
+                        <ul class="list-group list-group-flush users_access_list rounded-2">
+                            <li class="list-group-item">
+                                <input type="checkbox" name="MED" value="MED" /> МЕДИЦИНА
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" checked name="IT" value="IT" /> IT
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="municipality" value="municipality" /> МЭРИЯ
+                            </li>
+                        </ul>
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-target="#accessControlBotModal" data-bs-toggle="modal">Закрыть</button>
+                <button type="submit" form="form-change-data" class="btn btn-slack" data-bs-target="#accessControlBotModal" data-bs-toggle="modal">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of EditDataModal -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToastDanger" class="toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body d-flex justify-content-between">
+            <p class="m-0">Не найден пользователь в базе</p>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!--<div class="toast-container position-fixed bottom-0 end-0 p-3">-->
+<!--    <div id="liveToastSuccess" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">-->
+<!--        <div class="toast-body d-flex justify-content-between">-->
+<!--            <p class="m-0">Пользователь добавлен</p>-->
+<!--            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--   Core JS Files   -->
+
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/chartjs.min.js"></script>
+<script src="../assets/DataTables/datatables.js"></script>
+<script !src="">
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<script>
+    const toastTrigger = document.getElementById('button-add-user-to-bot')
+    const toastLiveExample = document.getElementById('liveToastDanger')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastLiveExample)
+
+            toast.show()
+        })
+    }
+</script>
+<script src="../assets/js/script.js"></script>
+<script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+</script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+
+</html>
