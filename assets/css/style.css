@@ -236,3 +236,12 @@
    height: 300px !important;
     overflow-x: scroll;
 }
+.navbar-vertical.navbar-expand-xs .navbar-collapse {
+    display: block;
+    overflow: auto;
+    height: calc(100vh - 400px);
+}
+
+.card.card-profile-bottom {
+    margin-top: 3rem;
+}
